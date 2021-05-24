@@ -47,11 +47,9 @@ Python数据输入(Input)、转换(transform)、输出(output)，一行代码读
   data = dataito.read(filepath)				#调用函数读取(读取其他支持的格式也是这个函数)
   data= dataito.transform(data,'dataframe')	#数据格式转换为想要的格式（转换为其他支持的格式也是这个）
   save(data,r'D:\data')	#保存在data文件夹（默认文件名为data）
-```
+  ```
   
-  
-
-## en
+  ## en
 
 Python data input (i), transform (t), output (o), a line of code to read / convert a variety of formats of data files
 
@@ -68,13 +66,15 @@ Python data input (i), transform (t), output (o), a line of code to read / conve
 - example
 
   ```python
-  import dataito
-  
-  filepath = r'data/data.xlsx'				#Read data files in supported formats
-  data = dataito.read(filepath)				#Call the function to read (read other supported formats as well as this function)
-  data= dataito.transform(data,'dataframe')	#Convert the data format to the desired format (and other supported formats)
-  save(data,r'D:\data')	#Save in the data folder (the default file name is data). If the path is not written, the file is saved in the root directory
+   import dataito
+    
+    filepath = r'data/data.xlsx'				#Read data files in supported formats
+    data = dataito.read(filepath)				#Call the function to read (read other supported formats as well as this function)
+    data= dataito.transform(data,'dataframe')	#Convert the data format to the desired format (and other supported formats)
+    save(data,r'D:\data')	#Save in the data folder (the default file name is data). If the path is not written, the file is saved in the root directory
   ```
+  
+  
 
   
 
