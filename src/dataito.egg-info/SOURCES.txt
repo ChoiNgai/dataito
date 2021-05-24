@@ -1,0 +1,8 @@
+LICENSE
+pyproject.toml
+setup.cfg
+setup.py
+src/dataito.egg-info/PKG-INFO
+src/dataito.egg-info/SOURCES.txt
+src/dataito.egg-info/dependency_links.txt
+src/dataito.egg-info/top_level.txt
