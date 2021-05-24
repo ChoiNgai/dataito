@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: dataito
-Version: 0.0.1
+Version: 0.0.5
 Summary: Python data input (i), transform (t), output (o), a line of code to read / convert a variety of formats of data files
 Home-page: https://github.com/ChoiNgai/dataito
 Author: CAIWEI
@@ -13,69 +13,46 @@ Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
-License-File: LICENSE
+License-File: LICENSE.txt
 
-# DataITO
+# A sample Python project
 
-![copyright: MIT (shields.io)](https://img.shields.io/badge/copyright-MIT-green)![python: data (shields.io)](https://img.shields.io/badge/python-data-blue)
+![Python Logo](https://www.python.org/static/community_logos/python-logo.png "Sample inline image")
 
-## cn
+A sample project that exists as an aid to the [Python Packaging User
+Guide][packaging guide]'s [Tutorial on Packaging and Distributing
+Projects][distribution tutorial].
 
-Python数据输入(Input)、转换(transform)、输出(output)，一行代码读取/转换多种格式的数据文件
+This project does not aim to cover best practices for Python project
+development as a whole. For example, it does not provide guidance or tool
+recommendations for version control, documentation, or testing.
 
+[The source for this project is available here][src].
 
+Most of the configuration for a Python project is done in the `setup.py` file,
+an example of which is included in this project. You should edit this file
+accordingly to adapt this sample project to your needs.
 
-- 目前支持的读取格式
+----
 
-  - txt
-  - xlsx
-  - csv
+This is the README file for the project.
 
-- 目前支持的转换格式
+The file should use UTF-8 encoding and can be written using
+[reStructuredText][rst] or [markdown][md use] with the appropriate [key set][md
+use]. It will be used to generate the project webpage on PyPI and will be
+displayed as the project homepage on common code-hosting services, and should be
+written for that purpose.
 
-  - dataframe
+Typical contents for this file would include an overview of the project, basic
+usage examples, etc. Generally, including the project changelog in here is not a
+good idea, although a simple “What's New” section for the most recent version
+may be appropriate.
 
-  
+[packaging guide]: https://packaging.python.org
+[distribution tutorial]: https://packaging.python.org/tutorials/packaging-projects/
+[src]: https://github.com/pypa/sampleproject
+[rst]: http://docutils.sourceforge.net/rst.html
+[md]: https://tools.ietf.org/html/rfc7764#section-3.5 "CommonMark variant"
+[md use]: https://packaging.python.org/specifications/core-metadata/#description-content-type-optional
 
-- example
-
-  ```python
-  import dataito
-  
-  filepath = r'data/data.xlsx'				#读取支持格式的数据文件
-  data = dataito.read(filepath)				#调用函数读取(读取其他支持的格式也是这个函数)
-  data= dataito.transform(data,'dataframe')	#数据格式转换为想要的格式（转换为其他支持的格式也是这个）
-  ```
-
-  
-
-
-
-## en
-
-Python data input (i), transform (t), output (o), a line of code to read / convert a variety of formats of data files
-
-- Currently supported read formats
-
-  - txt
-  - xlsx
-  - csv
-
-- Currently supported conversion formats
-
-  - dataframe
-
-  
-
-- example
-
-  ```python
-  import dataito
-  
-  filepath = r'data/data.xlsx'				#Read data files in supported formats
-  data = dataito.read(filepath)				#Call the function to read (read other supported formats as well as this function)
-  data= dataito.transform(data,'dataframe')	#Convert the data format to the desired format (and other supported formats)
-  ```
-
-  
 
