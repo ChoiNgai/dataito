@@ -11,9 +11,9 @@ setuptools.setup(
     description="Python data input (i), transform (t), output (o), a line of code to read / convert a variety of formats of data files",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/ChoiNgai/dataito",
     project_urls={
-        "Bug Tracker": "https://github.com/pypa/sampleproject/issues",
+        "Bug Tracker": "https://github.com/ChoiNgai/dataito/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
