@@ -4,6 +4,22 @@
 
 <center><img src="https://camo.githubusercontent.com/8ea5ab2f59ce09a175cb2fd87d0a75b86bde024cbb8b96a596f9d698a89dea15/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f707972696768742d4d49542d677265656e"><img src="https://camo.githubusercontent.com/036c3fa7badfd718f1d5f594921b9eeb0f3122a0529d3f4113aeb584cae74f1b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f707974686f6e2d646174612d626c7565"></center>
 
+## 安装(install)
+
+- 安装开发版（Install development version）
+
+```python
+py -m pip install --index-url https://test.pypi.org/simple/ --no-deps dataito
+```
+
+- 安装版（ Install stable version ）
+
+```python
+pip install dataito		# 暂未发布（Not released yet）
+```
+
+
+
 ## cn
 
 Python数据输入(Input)、转换(transform)、输出(output)，一行代码读取/转换多种格式的数据文件
@@ -58,3 +74,4 @@ Python data input (i), transform (t), output (o), a line of code to read / conve
   ```
 
   
+
