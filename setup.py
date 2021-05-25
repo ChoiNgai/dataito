@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="dataito",
-    version="0.0.5",
+    version="0.1.0",
     author="CAIWEI",
     author_email="caiwei-email@qq.com",
     description="Python data input (i), transform (t), output (o), a line of code to read / convert a variety of formats of data files",

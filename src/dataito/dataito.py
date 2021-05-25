@@ -62,16 +62,16 @@ def transform(basic_data,target_data_type):
 
 
 '''输出:数据保存'''
-def save(data,savepath = " ",savename = " "):
+def save(data,savepath = " "):
 
     data = transform(data,'dataframe')      #统一转换为dataframe
 
     if isinstance(data,pd.DataFrame):
-        if savepath == " ":                             #如果没有填写路径(当然文件名更不会有了)
+        if savepath == " ":                             #如果没有填写路径或文件名
             data.to_excel("data.xlsx")                  #默认文件名为data.xlsx
-        elif (savepath != " ") & (savename == " "):         #如果只写了一个参数(文件名)
-            data.to_excel(savepath)                     #此时savepath是文件名
+        elif savepath != " ":                           
+            data.to_excel(savepath)                     
         else:
-            data.to_excel( savepath + "\\" + savename) 
+            print("save failed") 
     else:
         print("error, unsupported format")

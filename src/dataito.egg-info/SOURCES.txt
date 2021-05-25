@@ -2,6 +2,7 @@ LICENSE.txt
 MANIFEST.in
 README.md
 pyproject.toml
+readme.md
 setup.cfg
 setup.py
 src/dataito/__init__.py
