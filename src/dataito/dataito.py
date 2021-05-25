@@ -4,6 +4,7 @@
 import os
 import numpy as np
 import pandas as pd
+import json
 
 
 '''输入(input):数据读取'''
@@ -13,41 +14,64 @@ def read(path):
 
     if DataFormat == 'xlsx':
         data = pd.read_excel(path,engine='openpyxl')
+        return np.array(data)
+    elif DataFormat == 'json':
+        data = json.loads(open(path).read())
         return data
+    else:
+        
+        data = {
+            # 'txt': open(path,"r").readlines(),    #保留换行符
+            'txt': open(path, "r").read().splitlines(), #不保留换行符
+            'csv': pd.read_csv(path,"r"),
 
-    data = {
-        'txt': open(path, "r",encoding='utf-8'),
-        'csv': pd.read_csv(path),
-        # 'xlsx': pd.read_excel(path,engine='openpyxl') #这个比较离谱，放在这里就会报错
-    }.get(DataFormat,"error, unsupported format")
+             #这几个比较离谱，放在这里就会报错
+            # 'json': pd.read_json(path,"r")
+            # 'json': json.loads(open(path).read())
+            # 'xlsx': pd.read_excel(path,engine='openpyxl')
+        }.get(DataFormat,"error, unsupported format")
 
-    return data
+        return np.array(data)
 
 
 '''转换(transform):格式转换'''
 def transform(basic_data,target_data_type):
+    
+    try:
+        df = pd.DataFrame(basic_data)   #先转化成dataframe
 
-    data = {
-        'dataframe': pd.DataFrame(basic_data),   #转换为dataframe类型
-        # 'list': basic_data.values.tolist(),
-    }.get(target_data_type,"error, unsupported format")
-    return data
+    except IOError:
+
+        print("This function does not support JSON format or its converted format") #json格式转换成的数组大小是空的
+
+    else:
+        
+        # 再转化成指定类型
+        data = {
+
+            'dataframe': df,                #转换为dataframe类型
+            'pandas': df,                   #pandas支持的格式(虽然还是dataframe)
+
+            'list': df.values.tolist(),     #列表
+
+            'array': df.values,             #数组
+            'numpy': np.array(df),          #numpy支持的格式(虽然还是数组)
+
+        }.get(target_data_type,"error, unsupported format")
+        return data
 
 
 '''输出:数据保存'''
-def save(data,savepath = " ",savename = "data.xlsx"):
+def save(data,savepath = " ",savename = " "):
 
-    data = transform(data,'dataframe')
+    data = transform(data,'dataframe')      #统一转换为dataframe
 
     if isinstance(data,pd.DataFrame):
-        if savepath == " ":
-            data.to_excel(savename)
+        if savepath == " ":                             #如果没有填写路径(当然文件名更不会有了)
+            data.to_excel("data.xlsx")                  #默认文件名为data.xlsx
+        elif (savepath != " ") & (savename == " "):         #如果只写了一个参数(文件名)
+            data.to_excel(savepath)                     #此时savepath是文件名
         else:
-            data.to_excel( savepath + "\\" + savename)
+            data.to_excel( savepath + "\\" + savename) 
     else:
         print("error, unsupported format")
-
-
-
-
-

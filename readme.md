@@ -29,10 +29,13 @@ Python数据输入(Input)、转换(transform)、输出(output)，一行代码读
   - txt
   - xlsx
   - csv
+  - json（仅支持结构化数据）
 
 - 目前支持的转换格式
 
-  - dataframe
+  - dataframe (pandas)
+  - array (numpy)
+  - list
 
 - 目前支持的保存格式
 
