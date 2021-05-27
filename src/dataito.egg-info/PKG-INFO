@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: dataito
-Version: 0.0.5
+Version: 0.1.0
 Summary: Python data input (i), transform (t), output (o), a line of code to read / convert a variety of formats of data files
 Home-page: https://github.com/ChoiNgai/dataito
 Author: CAIWEI
